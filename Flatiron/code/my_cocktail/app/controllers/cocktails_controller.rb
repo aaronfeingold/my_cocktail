@@ -2,7 +2,7 @@ class CocktailsController < ApplicationController
 
   
   get '/cocktails' do
-    @cocktails = Cocktail.all
+    @cocktails = current_user.cocktails
     erb :'/cocktails/index.html'
   end
 
@@ -24,7 +24,7 @@ class CocktailsController < ApplicationController
     set_cocktail
     erb :'/cocktails/edit.html'
   end
-  
+
   get '/cocktails/:id' do
     set_cocktail
     if @cocktail
@@ -33,8 +33,6 @@ class CocktailsController < ApplicationController
       redirect '/cocktails'
     end
   end
-
- 
 
   patch '/cocktails/:id' do
     set_cocktail
