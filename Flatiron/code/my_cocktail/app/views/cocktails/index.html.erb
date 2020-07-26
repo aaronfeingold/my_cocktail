@@ -1,4 +1,5 @@
 <h1>Cocktail List</h1>
+<p><a href="/cocktails/new">Create and Add a New Cocktail</a></p>
 <hr>
 <% @cocktails.each do |cocktail| %>
   <p><a href="/cocktails/<%= cocktail.id %>"><%= cocktail.name %></a></p>

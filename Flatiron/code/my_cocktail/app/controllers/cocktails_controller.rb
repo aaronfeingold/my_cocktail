@@ -14,6 +14,7 @@ class CocktailsController < ApplicationController
   post '/cocktails' do
     @cocktail = Cocktail.new(params[:cocktail])
     if @cocktail.save
+      current_user.cocktails << @cocktail
       redirect '/cocktails'
     else
       erb :'cocktails/new.html'
@@ -38,8 +39,8 @@ class CocktailsController < ApplicationController
     set_cocktail
     if @cocktail.update(
       name: params[:cocktail][:name],
-      base_liquor: params[:cocktail][:base_liquor]
-      )
+      base_liquor: params[:cocktail][:base_liquor],
+      user_id: params[:cocktail][:user_id])
       redirect "/cocktails/#{@cocktail.id}"
     else 
       erb :'cocktail/edit.html'
