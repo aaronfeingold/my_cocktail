@@ -40,7 +40,7 @@ class CocktailsController < ApplicationController
     if @cocktail.update(
       name: params[:cocktail][:name],
       base_liquor: params[:cocktail][:base_liquor],
-      user_id: params[:cocktail][:user_id])
+      ingredients: params[:cocktail][:ingredients])
       redirect "/cocktails/#{@cocktail.id}"
     else 
       erb :'cocktail/edit.html'
