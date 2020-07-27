@@ -50,7 +50,7 @@ class CocktailsController < ApplicationController
 
   delete '/cocktails/:id' do
     set_cocktail
-    if current_user == @todo.user
+    if current_user == @cocktail.user
       @cocktail.destroy
     end
     redirect '/cocktails'

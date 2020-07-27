@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
+  <!-- navigation-->
     <div class="wrapper">
       <nav class="indigo dark-4">
         <div class="container">
@@ -37,6 +38,8 @@
           </ul>
         </div>
       </nav>
+      <!-- end navigation -->
+      <!-- errors -->
           <% if flash[:error] %>
           <% flash[:error].each do |error| %>
             <div>
@@ -49,8 +52,12 @@
             <%= flash[:notice] %>
           </div>
         <% end %>
-
+        <!-- end errors -->
+<!-- main content -->
+  <div class="container">
         <%= yield %>
+        </div>
+<!-- end main content -->        
     </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>

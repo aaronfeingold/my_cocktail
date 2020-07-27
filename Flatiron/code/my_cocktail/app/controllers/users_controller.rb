@@ -12,6 +12,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect '/cocktails'
     else
+      flash.now[:error] = @user.errors.full_messages
       erb :'users/new'
     end
   end 

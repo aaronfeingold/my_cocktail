@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
         session[:user_id] = @user.id
         redirect '/cocktails'
       else  
+        flash.now[:error] = ["Username or password didn't match"]
         erb :'sessions/new'
       end 
   end 
