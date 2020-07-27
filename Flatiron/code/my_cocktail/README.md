@@ -16,7 +16,7 @@ Finally, in a web browser like chrome, go to http://localhost:9393/ to use. You 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://https://github.com/aaronfeingold/my_cocktail. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/Nroulston/brew_tracker/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://https://github.com/aaronfeingold/my_cocktail. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/aaronfeingold/my_cocktail/blob/master/Flatiron/code/my_cocktail/CODE_OF_CONDUCT.md).
 
 
 ## License
