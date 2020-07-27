@@ -1,5 +1,5 @@
 class CocktailsController < ApplicationController
-
+  use Rack::Flash
   
   get '/cocktails' do
     @cocktails = current_user.cocktails
@@ -17,6 +17,7 @@ class CocktailsController < ApplicationController
       current_user.cocktails << @cocktail
       redirect '/cocktails'
     else
+      flash.now[:error] = @cocktail.errors.full_messages
       erb :'cocktails/new.html'
     end
   end
@@ -49,7 +50,9 @@ class CocktailsController < ApplicationController
 
   delete '/cocktails/:id' do
     set_cocktail
-    @cocktail.destroy
+    if current_user == @todo.user
+      @cocktail.destroy
+    end
     redirect '/cocktails'
   end
 
